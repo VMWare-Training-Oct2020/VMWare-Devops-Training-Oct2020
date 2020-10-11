@@ -3,7 +3,7 @@ node('master') {
         git 'https://github.com/VMWare-Training-Oct2020/VMWare-Devops-Training-Oct2020.git'
     }
     
-    dir('Lesson5') {
+    dir('Jenkins/3. Multi-Branch and Declarative Pipelines') {
         printMessage('Running Pipeline')
         stage("Testing") {
             sh 'python test_functions.py'
