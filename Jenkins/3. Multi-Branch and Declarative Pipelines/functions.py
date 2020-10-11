@@ -2,10 +2,10 @@ def add_two_values(value1, value2):
     """ Adds two integers
 
     Arguments:
-    value1: first integer value e.g. 10
-    value2: second integer value e.g. 2
+    value1: first integer value e.g. 15
+    value2: second integer value e.g. 21
     """
-    return value1 + value2
+    return value1 +  value2
 
 def add_multiple_values(*args):
     """ Adds a list of integers
