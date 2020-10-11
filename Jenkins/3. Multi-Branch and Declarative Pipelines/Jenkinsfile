@@ -1,6 +1,6 @@
 node('master') {
     stage("Fetch Source Code") {
-        git 'https://github.com/atingupta2005/VMWare-Devops-Training-Oct2020'
+        git 'https://github.com/VMWare-Training-Oct2020/VMWare-Devops-Training-Oct2020.git'
     }
     
     dir('Lesson5') {
