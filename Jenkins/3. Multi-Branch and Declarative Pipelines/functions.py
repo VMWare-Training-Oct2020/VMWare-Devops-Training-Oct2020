@@ -20,6 +20,7 @@ def add_multiple_values(*args):
     return sum_
 
 def get_full_name(firstname, lastname):
+    # New feature added
     """ Return the full name in the format firstname, lastname
 
     Arguments:
