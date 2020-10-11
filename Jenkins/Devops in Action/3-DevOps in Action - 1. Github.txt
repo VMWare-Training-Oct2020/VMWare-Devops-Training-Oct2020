@@ -1,0 +1,6 @@
+#Github - Create an account
+https://github.com/join in a web browser.
+#Fork your application code
+https://github.com/atingupta2005/hello-world-maven
+
+#Git clone the github code

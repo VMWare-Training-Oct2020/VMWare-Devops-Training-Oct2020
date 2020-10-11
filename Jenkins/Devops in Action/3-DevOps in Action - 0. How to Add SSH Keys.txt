@@ -1,0 +1,37 @@
+# In order to use an SSH key with Git, you must first create the key on your computer. If you already have an SSH key, you can skip these steps. In order to check if you have a key, you can run this command:
+ssh-add -l
+
+#Follow along with the steps below to create the key and copy its contents. You will need to open your computer’s default terminal application.
+#Open the terminal app on your computer
+#Enter the following command
+ssh-keygen -t rsa -b 4096 -C "<youremailaddress>"
+
+#Press Enter to accept the default file location
+#Enter a secure passphrase and Press Enter
+
+#Enter this command to display the contents of your public key
+cat .ssh/id_rsa.pub
+
+Copy the contents of your key to your clipboard (we will need it later)
+
+
+###------------------------------------------------------------###
+
+# How to Add an SSH Key to your Github Account
+
+Open Settings from Top Right on your Avatar
+Select SSH and GPG keys
+Click New SSH key
+Enter a title in the field
+Paste your public key into the Key field
+Click Add SSH key
+
+#Test SSH Key
+ssh -T git@github.com
+
+#Add SSH Remote
+#----Warning: Make sure to take SSH URL from Github Repo----
+git remote set-url origin git@github.com:username/your-repository.git
+
+# Now push and it would not ask credentials
+git push

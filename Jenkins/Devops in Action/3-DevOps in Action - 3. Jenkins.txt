@@ -1,0 +1,25 @@
+#Jenkins - Deploy Jenkins on Ubuntu server
+java -version
+#Run below steps if Java not installed
+sudo apt update
+sudo apt install -y openjdk-8-jdk
+
+#Add the Jenkins Repository
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+#Install Jenkins
+sudo apt -y update
+sudo apt install -y jenkins
+systemctl status jenkins
+
+
+#Modify Firewall to Allow Jenkins
+sudo ufw allow 8080
+sudo ufw status
+
+#Set up Jenkins
+# http://your_ip_or_domain:8080
+
+#Take password:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword

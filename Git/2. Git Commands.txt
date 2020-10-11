@@ -1,0 +1,177 @@
+#http://git-scm.com/book/en/Getting-Started-Installing-Git
+
+git config --global user.name "My Name"
+git config --global user.email myemail@gmail.com
+
+
+mkdir gitPractice
+
+cd gitPractice
+
+mkdir mygitrepo2
+cd mygitrepo2
+
+
+git init
+
+
+git status
+
+
+touch hello.txt
+echo Hello, world! > hello.txt
+
+
+git add hello.txt
+
+git status
+
+
+git commit -m "Add my first file"
+
+git status
+
+cd ..
+
+#Participants need to fork repo:
+	#https://github.com/atingupta2005/hello-world.git
+
+git clone https://github.com/<githubaccountname>/hello-world.git
+
+cd hello-world
+
+#Make some changes in few files
+
+git status
+
+#Difference between edited and committed files
+git diff
+
+
+#List of changes 
+git log
+git log --since=yesterday
+git log --since=2weeks
+
+
+
+#Abort current uncommitted changes
+git reset --hard 
+
+git diff
+git status
+
+#Make some changes in few files
+git status
+git diff
+
+#To put files into next commit
+git add .
+git status
+
+#Save pending additions to local repository
+git commit -m "my commit"
+
+git status
+
+#To view the statistics and about last commit:
+git show
+
+#Do some changes in code
+
+
+#Shows file differences not yet staged
+git diff
+
+#Stage the changes
+git add .
+
+#No difference will now be shown
+git diff
+
+#Shows file differences between staging and the last file version
+git diff --staged
+
+#Shows content differences between two commits
+git log
+git diff [first-commit]...[second-commit]
+
+#Shows content differences between two branches
+git checkout -b new_feature_1
+# Do few changes in code
+git add *
+git commit -m "New Feature 1"
+git branch
+git diff master new_feature_1
+
+
+#Unstages the file, but preserve its contents
+#Do some changes in code
+git status
+git reset <file name>
+
+#Branching
+#Lists all local branches in the current repository
+git branch
+
+#Creates a new branch
+git branch new_feature_2
+
+#Switches to the specified branch and updates the working directory
+git checkout new_feature_2
+
+#Do some file changes
+git status
+git add *
+git commit -m "Added feature via feature branch 2"
+git merge new_feature_2
+git checkout master
+
+#Combines the specified branch’s history into the current branch
+git merge new_feature_2
+
+$Delete the specified branch
+git branch -d new_feature_2
+
+#SUPPRESS TRACKING
+#A text file named .gitignore suppresses accidental versioning of files and paths matching the specified pattern
+ .gitignore
+  *.log
+  build/
+  temp-*
+
+#SAVE FRAGMENTS
+#Shelve and restore incomplete changes
+#Temporarily stores all modified tracked files
+git status
+git stash
+
+#Lists all stashed changesets
+git stash list
+
+#Restores the most recently stashed files
+git status
+git stash pop
+git status
+
+
+#Discards the most recently stashed changeset
+git stash
+git stash drop
+
+#The full address of that remote can be viewed with:
+git remote -v 
+
+#To add a new remote name:
+git remote add <remote name> <remote address> 
+
+
+#To put changes from local repo in the remote repo
+git push origin master 
+
+#Open Github to inspect the changes
+
+#Now do some changes in github
+
+#From remote repo to get most recent changes
+git pull origin master

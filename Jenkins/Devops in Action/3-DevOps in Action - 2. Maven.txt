@@ -1,0 +1,25 @@
+#Commands - Install maven
+sudo apt  -y update 
+# Check if java already installed?
+java -version
+
+#Run below steps if Java not installed
+sudo apt install -y openjdk-8-jdk
+
+# Install maven
+mvn -v
+sudo apt install -y maven
+
+#Commands - Install jdk
+git clone https://github.com/atingupta2005/hello-world-maven.git
+cd hello-world-maven/
+mvn compile
+
+
+#Deploy .jar file manually
+# Make sure to cd into the project directory:
+pwd
+mvn package
+java -jar target/gs-maven-0.1.0.jar
+
+
