@@ -36,8 +36,6 @@ docker-compose up
 
 https://hub.docker.com
 
-docker-compose down --help
-
 docker-compose down -v
 
 ## Adding Image Building to Compose Files
@@ -62,14 +60,4 @@ docker-compose up -d
 
 docker image ls
 
-docker-compose down --help
-
 docker-compose down --rmi local
-
-## Assignment Answers: Compose for Run-Time Image Building and Multi-Container Dev
-
-docker-compose up
-
-docker-compose down
-
-docker-compose up
