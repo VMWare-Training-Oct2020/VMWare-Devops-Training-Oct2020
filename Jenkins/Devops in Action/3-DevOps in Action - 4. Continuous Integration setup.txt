@@ -1,6 +1,6 @@
 #Continuous Integration setup - Jenkins and Github
 #Fork Github repo: 
-# https://github.com/contactroservice/hello-world-maven
+# https://github.com/atingupta2005/hello-world-maven
 
 #Configuring GitHub
 Go to your GitHub repository and click on 'Settings'.
