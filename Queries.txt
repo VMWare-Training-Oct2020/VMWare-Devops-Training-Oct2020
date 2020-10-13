@@ -1,0 +1,22 @@
+1. How to reset a specific file from a set of files
+# Git don't do versioning of specific files separately. It maintains the version of each commit.
+# So we first need to know from which specific commit we want to rollback our file. Use below command for that.
+git log -p path/to/file
+
+#You'll be able to find the SHA1 (hash) of the commit with the version of the file you want
+
+#Now, all you have to do is this:
+
+# get the version of the file from the given commit
+git checkout <commit> path/to/file
+
+# and commit this modification
+git commit
+
+#The checkout command first reads the file into the index, then copies it into the work tree
+#So there's no need to use git add to add it to the index in preparation for committing.
+
+
+2. Why is .git/branches folder empty?
+Refer:
+https://stackoverflow.com/questions/10398225/what-is-the-git-branches-folder-used-for
