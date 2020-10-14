@@ -1,5 +1,5 @@
 resource "aws_security_group" "var_demo" {
-  name        = "kplabs-variables"
+  name        = "att-variables"
 
   ingress {
     from_port   = 443

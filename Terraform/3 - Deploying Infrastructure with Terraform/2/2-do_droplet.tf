@@ -3,7 +3,7 @@ provider "digitalocean" {
 }
 
 
-resource "digitalocean_droplet" "kplabsdroplet" {
+resource "digitalocean_droplet" "attdroplet" {
   image  = "ubuntu-18-04-x64"
   name   = "web-1"
   region = "nyc1"

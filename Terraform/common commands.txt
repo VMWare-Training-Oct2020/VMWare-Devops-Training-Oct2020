@@ -1,1 +1,3 @@
+terraform refresh
+terraform show		# Information from State File
 terraform destroy -target aws_instance.myec2
