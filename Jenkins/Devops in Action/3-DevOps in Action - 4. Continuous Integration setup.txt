@@ -1,6 +1,6 @@
 #Continuous Integration setup - Jenkins and Github
 #Fork Github repo: 
-# https://github.com/contactroservice/hello-world-maven
+# https://github.com/atingupta2005/hello-world-maven
 
 #Configuring GitHub
 Go to your GitHub repository and click on 'Settings'.
@@ -45,13 +45,13 @@ Every time you publish your changes to Github, GitHub will trigger your new Jenk
 
 #Code Packaging automation
 #Source Code on Github
-https://github.com/contactroservice/java-servlet-hello
+https://github.com/atingupta2005/java-servlet-hello
 
 # Move to your base directory
 cd
 
 #Clone
-git clone https://github.com/contactroservice/java-servlet-hello
+git clone https://github.com/atingupta2005/java-servlet-hello
 cd java-servlet-hello
 
 #Compile app
@@ -128,7 +128,7 @@ Create a new Item -> Freestyle project
 Project Name:
  Simple_tomcat_deployment
 Git URL:
- https://github.com/contactroservice/java-servlet-hello
+ https://github.com/atingupta2005/java-servlet-hello
 Build:
  Invoke top level maven targets:
   package -Dmaven.test.skip=true
@@ -267,10 +267,10 @@ If you start to type the letter, the node list will show up
 
 Important URLs
 GitHub projects:
-https://github.com/contactroservice/hello-world-maven
+https://github.com/atingupta2005/hello-world-maven
 Console Based – To build jar file
 
-https://github.com/contactroservice/java-servlet-hello
+https://github.com/atingupta2005/java-servlet-hello
 Web Based to build war file
 
 You VM IP:
