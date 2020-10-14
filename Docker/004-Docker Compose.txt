@@ -12,6 +12,9 @@ pcat docker-compose.yml
 
 docker-compose up
 
+#To create using custom compose file other than docker-compose.yml
+docker-compose -f custom-compose.yml up -d
+
 docker-compose up -d
 
 docker-compose logs
