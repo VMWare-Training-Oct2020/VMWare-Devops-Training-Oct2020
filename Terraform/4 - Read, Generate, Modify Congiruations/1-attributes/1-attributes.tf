@@ -12,10 +12,11 @@ output "eip" {
   value = aws_eip.lb
 }
 
-resource "aws_s3_bucket" "atinbucket2020" {
-  bucket = "atinbucket2020"
+resource "aws_instance" "myec2" {
+   ami = "ami-082b5a644766e0e6f"
+   instance_type = "t2.micro"
 }
 
-output "mys3bucket" {
-  value = aws_s3_bucket.atinbucket2020
+output "my_aws_instance" {
+  value = aws_instance.myec2
 }
