@@ -12,7 +12,7 @@ output "eip" {
   value = aws_eip.lb
 }
 
-resource "aws_s3_bucket" "mys3" {
+resource "aws_s3_bucket" "atin_mys3" {
   bucket = "kplabs-attribute-demo-001"
 }
 
