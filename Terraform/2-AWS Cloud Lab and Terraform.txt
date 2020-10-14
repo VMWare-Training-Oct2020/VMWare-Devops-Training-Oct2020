@@ -1,0 +1,6 @@
+Refer
+ - vmware_aws_new_user_credentials.csv
+
+Take access_key and secret_key
+
+Login to AWS Cloud

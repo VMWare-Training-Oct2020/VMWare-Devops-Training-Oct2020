@@ -1,0 +1,38 @@
+#Installation Node.js v14.x
+
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+node -v
+npm -v
+
+#Installing Express
+mkdir project-dev
+cd project-dev
+npm init
+npm install express --save
+
+#Edit package.json
+Change "main" to whichever file where you will keep your code (app.js)
+
+#Hello world example
+#Create app.js with below content:
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+
+
+#Run app
+node app.js
+
+
+curl http://localhost:3000/
+

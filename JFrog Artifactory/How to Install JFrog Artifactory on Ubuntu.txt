@@ -1,0 +1,33 @@
+Step 1: Prepare Ubuntu
+
+sudo apt update
+sudo apt dist-upgrade
+sudo apt autoremove
+
+Step 2: Install OpenJDK 8
+sudo apt update
+sudo apt-get install openjdk-8-jdk openjdk-8-doc
+java -version
+
+
+Step 3: Download and Install JFrog Artifactory
+sudo apt install wget software-properties-common
+
+sudo su
+wget -qO - https://api.bintray.com/orgs/jfrog/keys/gpg/public.key | apt-key add -
+exit
+sudo add-apt-repository "deb [arch=amd64] https://jfrog.bintray.com/artifactory-debs $(lsb_release -cs) main"
+
+sudo apt update
+sudo apt install jfrog-artifactory-oss
+
+systemctl enable artifactory.service
+systemctl status artifactory.service
+
+
+Step 4: Access Artifactory Portal
+Enable Ports in Azure: 8081, 8082
+http://<PublicIP>:8081/artifactory/
+
+Login with Username:  admin and Password: password
+

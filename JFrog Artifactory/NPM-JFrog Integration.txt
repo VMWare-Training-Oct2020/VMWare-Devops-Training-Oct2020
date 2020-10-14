@@ -1,0 +1,36 @@
+#NPM-JFrog Integration
+Create 3 JFrog Repos - https://atttraining.jfrog.io/ui/admin/repositories/local
+ npm-local1
+ npm-remote1
+ npm-virtual1
+  Add npm-local1 and npm-remote1
+ 
+
+#Create a new user in JFrog Artifactory - https://atttraining.jfrog.io/ui/admin/management/users
+ - I used - admin/Azure@123456/atingupta2005@gmail.com
+# Note the username, password and email id
+
+#Open Artifact Repository Browser - Application\Artifactory\Artifacts -  https://atttraining.jfrog.io/ui/repos/tree/General/npm-virtual1
+
+#Open npm-virtual1
+#Open Set Me Up
+ - Specify password of admin user - Azure@123456
+
+#Open Terminal
+npm config set registry https://atttraining.jfrog.io/artifactory/api/npm/npm-virtual1/
+
+npm login
+
+npm install uglify-js
+
+#Open Artifact Repository Browser
+ - Open npm-virtual1
+   - Inspect uglify is available
+
+npm install math-random
+ - Instepct in Artifact Repository Browser
+ 
+
+# Add Properties to artifacts in Artifact Repository Browser
+ - Add properties for uglify-js
+ - Add properties for math-random

@@ -1,0 +1,40 @@
+#JFrog - Using CLI
+
+sudo su
+wget -qO - https://releases.jfrog.io/artifactory/api/gpg/key/public | apt-key add -;
+exit
+echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list;
+sudo apt update;
+sudo apt install -y jfrog-cli;
+
+jfrog rt c --url=https://atttraining.jfrog.io/artifactory --user=admin --password=Azure@123456
+jfrog rt c show
+jfrog rt ping
+jfrog rt u "app.js" "intern-dev" --flat=true
+
+#Refer to Artifactory Browser to inspect - intern-dev
+
+
+
+#Promote project using CLI
+Create 3 local repos:
+- Intern-Dev
+- Intern-QA
+- Intern-Prod
+cd ..
+pwd
+mkdir intern-proj
+cd intern-proj
+jfrog rt dl "intern-dev" --build-name=first-intern-build --build-number 1
+
+#Inspect Artificatory Build
+
+jfrog rt bce first-intern-build 1
+touch build-artifacts
+
+jfrog rt u "build-artifacts" "intern-dev" --flat=true --build-name first-intern-build --build-number 1
+
+#Inspect Artificatory Build
+
+jfrog rt bp first-intern-build 1
+jfrog rt bpr first-intern-build 1 Intern-QA
