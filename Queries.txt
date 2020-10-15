@@ -20,3 +20,9 @@ git commit
 2. Why is .git/branches folder empty?
 Refer:
 https://stackoverflow.com/questions/10398225/what-is-the-git-branches-folder-used-for
+
+Docker Networking
+Github Merger from Fork
+Upload PPT to OneDrive
+Jenkins with Artifactory integration
+Jenkins with Docker integration
