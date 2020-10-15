@@ -1,0 +1,15 @@
+Refer Github Repo:
+https://github.com/atingupta2005/dockerwebapp
+
+It has Dockerfile, Jenkinsfile-Dockerhub, Jenkinsfile-JFrog
+
+Create a local repo of type Docker in JFrog. Name - docker-local
+
+Jenkins:
+ - Create global credentials with id - dockerhub
+ - Create global credentials with id - jfrog-dockerhub
+ 
+ - Create Pipeline Project for Dockerhub. Refer - Day4-DockerBuild
+ - Create Pipeline Project for Dockerhub. Refer - Day4-DockerBuild-JFrog
+ 
+Build the project 

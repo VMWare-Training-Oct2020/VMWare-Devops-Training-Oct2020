@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-west-2"
-  access_key = "AKIATV5HPRFNOWLG2VDU"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 # A resource block declares a resource of a given type ("aws_instance") 
