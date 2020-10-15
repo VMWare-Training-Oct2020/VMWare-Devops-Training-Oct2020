@@ -1,0 +1,45 @@
+#Use the default bridge network
+docker network ls
+docker run -dit --name alpine1 alpine ash
+docker run -dit --name alpine2 alpine ash
+docker network inspect bridge
+docker attach alpine1
+ip addr show
+ping google.com
+ping -c 2 172.17.0.3
+exit
+ping -c 2 alpine2
+docker stop alpine1; docker rm alpine1
+docker stop alpine2; docker rm alpine2
+
+docker network create --driver bridge u1-alpine-net
+docker network ls
+docker network inspect u1-alpine-net
+#Now lets create 4 containers and attach those to the network
+docker run -dit --name u1-alpine1 --network u1-alpine-net alpine ash
+docker run -dit --name u1-alpine2 --network u1-alpine-net alpine ash
+docker run -dit --name u1-alpine3 alpine ash   # Will be connected to bridge
+docker run -dit --name u1-alpine4 --network u1-alpine-net alpine ash
+docker network connect bridge u1-alpine4            # Connected to 2 networks
+docker container ls # docker ps
+docker network inspect bridge
+docker network inspect u1-alpine-net
+
+docker attach  u1-alpine1
+ping u1-alpine2
+ping u1-alpine3
+ping u1-alpine4
+exit
+
+#Finally Stop and remove all containers and the alpine-net network.
+docker container stop u1-alpine1 u1-alpine2 u1-alpine3 u1-alpine4
+docker container rm u1-alpine1 u1-alpine2 u1-alpine3 u1-alpine4
+docker network rm u1-alpine-net
+
+#Networking using the host network
+docker run --rm -d --network host --name my_nginx nginx
+curl localhost:80
+sudo netstat -tulpn | grep :80
+
+#Verify which process is bound to port 80, using the netstat command
+sudo docker container stop my_nginx
