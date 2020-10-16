@@ -1,3 +1,8 @@
+#For Windows
+https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_windows_amd64.zip
+
+
+#For Ubuntu
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"

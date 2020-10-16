@@ -1,0 +1,81 @@
+#JFrog - Using CLI
+
+sudo su
+wget -qO - https://releases.jfrog.io/artifactory/api/gpg/key/public | apt-key add -;
+exit
+echo "deb https://releases.jfrog.io/artifactory/jfrog-debs xenial contrib" | sudo tee -a /etc/apt/sources.list;
+sudo apt update;
+sudo apt install -y jfrog-cli
+
+#rt - repository
+#rt c - repository config
+jfrog rt c --url=https://atttrainings.jfrog.io/artifactory --user=admin --password=Azure@123456
+
+ll
+
+# Use any name for server id - myjfrogserver
+
+#rt c show - repository config show
+jfrog rt c show
+
+# To ping the jfrog remote server
+jfrog rt ping
+
+#rt u - upload file to repo
+jfrog rt u "index.js" "intern-dev" --flat=true
+
+#Refer to Artifactory Browser to inspect - intern-dev
+
+# To delete specific file we just uploaded
+jfrog rt del intern-dev/index.js
+
+# To delete all files we just uploaded
+jfrog rt del intern-dev
+
+#Promote project using CLI
+Create 3 local repos:
+- Intern-Dev
+- Intern-QA
+- Intern-Prod
+
+cd ..
+pwd
+mkdir intern-proj
+cd intern-proj
+
+#Download the existing build to work on it further.
+#While downloading associate it with another build name and build number to identify it later.
+jfrog rt dl "intern-dev" --build-name=first-intern-build --build-number 1
+
+#Inspect Artificatory Build
+
+#Collect the local machine environment where the further code building will be done and 
+# associate the environment details with the build name and number
+# bce: build collect environment
+jfrog rt bce first-intern-build 1
+
+#Create some imaginary build artifacts to be associated with this new build name and number
+touch build-artifacts
+
+#Upload the latest built code
+#build-artifacts is the file which is built by the developer
+#Upload the build artifacts to our new build name and number
+#Added build name and build number with the reglar upload command.
+jfrog rt u "build-artifacts" "intern-dev" --flat=true --build-name first-intern-build --build-number 1
+
+
+#Inspect Artificatory Build
+
+#Publish the build - bp: build publish
+#first-intern-build is build name
+jfrog rt bp first-intern-build 1
+
+#Inspect Artificatory Build
+
+#Build is still not promoted to next stage - Intern-QA
+#Before promoting the build, developer need to make sure that this build is working fine and other testers can test it.
+
+#Let's publish the build to next stage - Intern-QA
+#bpr: Build Promote
+jfrog rt bpr first-intern-build 1 Intern-QA
+

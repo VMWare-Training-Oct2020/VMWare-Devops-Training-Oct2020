@@ -1,0 +1,24 @@
+Build Docker Image using Jenkins:
+Github Project:
+https://github.com/atingupta2005/dockerwebapp
+
+Add permissions for Docker:
+sudo usermod -a -G docker jenkins
+chmod 777 /var/run/docker.sock
+sudo /etc/init.d/jenkins restart
+
+JFrog Artifactory:
+ Create a local repo of type Docker in JFrog. Name - docker-local.
+  - Copy Credential details and URL from Popup.
+
+
+GitHub Project:
+ - Change Docker Hub Image in Jenkinsfile (If needed)
+	- def customImage = docker.build("atttrainings.jfrog.io/docker-local/dockerwebapp:${env.BUILD_ID}")
+
+Jenkins:
+ - Create credentials for docker hub. ID should be jfrog-dockerhub.
+    This ID is being used in Jenkinsfile-JFrog on Github Repo
+ - Install Plugin: CloudBees Docker Build and Publish
+ - Create Pipeline Project. Refer - Day4-DockerBuild-JFrog
+ 

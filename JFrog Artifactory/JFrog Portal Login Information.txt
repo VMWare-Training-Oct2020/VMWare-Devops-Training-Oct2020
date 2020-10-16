@@ -1,4 +1,11 @@
 Login information
+https://atttrainings.jfrog.io
+Username: atingupta2005@gmail.com
+Password: Azure@123456
+API Key: AKCp8hyZadSwHzKdKoA8tEVKzjfBBq6zR7onbmmrFuBsGKXz7UKJKnrFe1WgQnEm336363nq8
+Encrypted Password: AP8PJTQoCWe4YWFaW73GNkjtzgg
+
+Login information
 https://atttraining.jfrog.io
 Username: atingupta2006@gmail.com
 Password: Azure@123456
