@@ -1,6 +1,3 @@
-provider "aws" {
-}
-
 resource "aws_elb" "bar" {
   name               = var.elb_name
   availability_zones = var.az
