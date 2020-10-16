@@ -1,3 +1,3 @@
 elb_name="myelb"
 timeout="400"
-az=["us-west-1a","us-west-1b"]
+az=["us-west-2a","us-west-2b","us-west-2c"]

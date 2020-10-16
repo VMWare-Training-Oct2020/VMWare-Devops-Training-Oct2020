@@ -1,5 +1,5 @@
 variable "usernumber" {
-  type = number
+  type = text
 }
 
 variable "elb_name" {
