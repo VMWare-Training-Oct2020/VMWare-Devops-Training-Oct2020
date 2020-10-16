@@ -1,5 +1,4 @@
 provider "aws" {
-  region     = "us-west-2"
 }
 
 variable "elb_names" {

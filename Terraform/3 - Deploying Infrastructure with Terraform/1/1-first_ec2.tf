@@ -1,5 +1,4 @@
 provider "aws" {
-  region     = "us-west-2"
 }
 
 # A resource block declares a resource of a given type ("aws_instance") 

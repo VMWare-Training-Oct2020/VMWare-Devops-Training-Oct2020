@@ -3,7 +3,6 @@
 ### Base Terraform Configuration (Before any modification)
 ```sh
 provider "aws" {
-  region     = "us-west-2"
 }
 
 resource "aws_instance" "myec2" {
@@ -14,7 +13,6 @@ resource "aws_instance" "myec2" {
 ### Final Modified Terraform Configuration:
 ```sh
 provider "aws" {
-  region     = "us-west-2"
 }
 
 resource "aws_instance" "myec2" {
