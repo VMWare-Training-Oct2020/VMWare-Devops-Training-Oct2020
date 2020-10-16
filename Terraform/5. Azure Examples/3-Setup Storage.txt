@@ -1,0 +1,39 @@
+#https://gaunacode.com/creating-an-azure-storage-account-for-static-site-hosting-using-terraform
+
+provider "azurerm" {
+  version = "~>2.2.0"
+  features {}
+}
+
+variable "app_name" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}
+
+variable "environment" {
+  type = string
+}
+
+locals {
+  storage_account_name = "st${var.app_name}${var.environment}"
+}
+
+
+resource "azurerm_storage_account" "storage_account" {
+  name                = local.storage_account_name
+  resource_group_name = azurerm_resource_group.resource_group.name
+
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  account_kind             = "StorageV2"
+
+  static_website {
+    index_document = "index.html"
+  }
+}
+
+
