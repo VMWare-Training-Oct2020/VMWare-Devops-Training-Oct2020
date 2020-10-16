@@ -1,3 +1,4 @@
+#Can use terraform console to play around with various functions
 provider "aws" {
 }
 
@@ -29,6 +30,8 @@ resource "aws_key_pair" "loginkey" {
 }
 
 resource "aws_instance" "app-dev" {
+   # Retrieves a value of a single element from a map given its key.
+   # lookup(map, key, default value)
    ami = lookup(var.ami,var.region)
    instance_type = "t2.micro"
    key_name = aws_key_pair.loginkey.key_name
