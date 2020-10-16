@@ -1,0 +1,5 @@
+#Database to store current state
+ - tfstate file - Stores the state of infrastucture that we created
+
+
+
